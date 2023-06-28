@@ -42,9 +42,10 @@ class GenericWorld(World):
     }
     hidden = True
     web = GenericWeb()
+    data_version = 1
 
     def generate_early(self):
-        self.world.player_types[self.player] = SlotType.spectator  # mark as spectator
+        self.multiworld.player_types[self.player] = SlotType.spectator  # mark as spectator
 
     def create_item(self, name: str) -> Item:
         if name == "Nothing":
